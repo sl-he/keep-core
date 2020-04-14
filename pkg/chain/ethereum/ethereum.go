@@ -166,7 +166,7 @@ func (ec *ethereumChain) GetSelectedParticipants() ([]chain.StakerAddress, error
 
 func (ec *ethereumChain) withRetry(fn func() error) error {
 	const numberOfRetries = 4
-	const delay = 250 * time.Millisecond
+	const delay = 1000 * time.Millisecond
 
 	for i := 1; ; i++ {
 		err := fn()
